@@ -91,10 +91,41 @@ th {
 }
 
 td {
-  padding: 12px;
-  border-bottom: 1px solid #2a2a2a;
+  padding: 8px;
   text-align: center;
-  color: #ddd;
+  border: 1px solid #333;
+  transition: all 0.2s ease;
+}
+
+/* FORCE VISIBILITY */
+.tier-s {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.tier-a {
+  background: #2ecc71 !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.tier-b {
+  background: #3498db !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.tier-c {
+  background: #f1c40f !important;
+  color: black !important;
+  font-weight: bold;
+}
+
+.tier-d {
+  background: #9b59b6 !important;
+  color: white !important;
+  font-weight: bold;
 }
 
 tr:nth-child(even) {
