@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Annual Yang Family Sports Stats</title>
+  <link rel="stylesheet" href="css/menu.css">
+  <style>
+    /* tier colors */
+    .tier-s { background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet); color: black; font-weight: bold; }
+    .tier-a { background: #2ecc71; color: black; font-weight: bold; }
+    .tier-b { background: #3498db; color: white; font-weight: bold; }
+    .tier-c { background: #f1c40f; color: black; font-weight: bold; }
+    .tier-d { background: #9b59b6; color: white; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+
+<div id="content">
+
+  <img id="topimage" src="images/kurokobasketball.gif" alt="Team Zone">
+
+  <h1>🏀 Yang Family Statistics</h1>
+
+  <h2>Team Roster</h2>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Leadership</th>
+      <th>IQ</th>
+      <th>Physical Toughness</th>
+      <th>Agility</th>
+      <th>Height</th>
+      <th>Clutch</th>
+      <th>Stamina</th>
+      <th>Competitiveness</th>
+    </tr>
+
+    <tr>
+      <td>Johnny Yang</td>
+      <td contenteditable="true">S</td><td contenteditable="true">A</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Alvin Yang</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Felix Yang</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Chalee Xiong</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Sawm Xiong</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Tim Kue</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Micheal Yang</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Allen Hawj</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Ge Yang</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Xay Hang</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Lee Tou Thao</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Saree Thao</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+    <tr>
+      <td>Nhia Thao</td>
+      <td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td>
+    </tr>
+
+  </table>
+
+  <h2>Sports:</h2>
+
+  <ul>
+    <li><a href="basketball.html">Basketball Stats</a></li>
+    <li><a href="discing.html">Discing Stats</a></li>
+    <li><a href="bowling.html">Bowling Stats</a></li>
+  </ul>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const table = document.querySelector("table");
+
+  function styleCell(cell) {
+    const val = cell.innerText.trim().toUpperCase();
+
+    cell.classList.remove("tier-s","tier-a","tier-b","tier-c","tier-d");
+
+    if (val === "S") cell.classList.add("tier-s");
+    else if (val === "A") cell.classList.add("tier-a");
+    else if (val === "B") cell.classList.add("tier-b");
+    else if (val === "C") cell.classList.add("tier-c");
+    else if (val === "D") cell.classList.add("tier-d");
+  }
+
+  function applyAllStyles() {
+    table.querySelectorAll("td[contenteditable='true']").forEach(styleCell);
+  }
+
+  applyAllStyles();
+
+  table.addEventListener("input", (e) => {
+    styleCell(e.target);
+    saveData();
+  });
+
+  function saveData() {
+    const data = [];
+    const rows = table.querySelectorAll("tr");
+
+    rows.forEach((row, rowIndex) => {
+      if (rowIndex === 0) return;
+
+      const cells = row.querySelectorAll("td");
+      const rowData = [];
+
+      cells.forEach((cell, i) => {
+        if (i === 0) return;
+        rowData.push(cell.innerText);
+      });
+
+      data.push(rowData);
+    });
+
+    localStorage.setItem("rosterData", JSON.stringify(data));
+  }
+
+  const saved = JSON.parse(localStorage.getItem("rosterData"));
+
+  if (saved) {
+    const rows = table.querySelectorAll("tr");
+
+    saved.forEach((rowData, rowIndex) => {
+      const cells = rows[rowIndex + 1]?.querySelectorAll("td");
+      if (!cells) return;
+
+      rowData.forEach((value, cellIndex) => {
+        if (cells[cellIndex + 1]) {
+          cells[cellIndex + 1].innerText = value;
+          styleCell(cells[cellIndex + 1]);
+        }
+      });
+    });
+  }
+});
+</script>
+
+</body>
+</html>
