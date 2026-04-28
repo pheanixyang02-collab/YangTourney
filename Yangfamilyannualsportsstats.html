@@ -120,6 +120,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const table = document.querySelector("table");
 
   function styleCell(cell) {
+    if (!cell) return;
+
     const val = cell.innerText.trim().toUpperCase();
 
     cell.classList.remove("tier-s","tier-a","tier-b","tier-c","tier-d");
@@ -130,17 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
     else if (val === "C") cell.classList.add("tier-c");
     else if (val === "D") cell.classList.add("tier-d");
   }
-
-  function applyAllStyles() {
-    table.querySelectorAll("td[contenteditable='true']").forEach(styleCell);
-  }
-
-  applyAllStyles();
-
-  table.addEventListener("input", (e) => {
-    styleCell(e.target);
-    saveData();
-  });
 
   function saveData() {
     const data = [];
@@ -163,23 +154,34 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("rosterData", JSON.stringify(data));
   }
 
-  const saved = JSON.parse(localStorage.getItem("rosterData"));
+  function loadData() {
+    const saved = JSON.parse(localStorage.getItem("rosterData"));
+    if (!saved) return;
 
-  if (saved) {
     const rows = table.querySelectorAll("tr");
 
     saved.forEach((rowData, rowIndex) => {
-      const cells = rows[rowIndex + 1]?.querySelectorAll("td");
-      if (!cells) return;
+      const row = rows[rowIndex + 1];
+      if (!row) return;
+
+      const cells = row.querySelectorAll("td");
 
       rowData.forEach((value, cellIndex) => {
-        if (cells[cellIndex + 1]) {
-          cells[cellIndex + 1].innerText = value;
-          styleCell(cells[cellIndex + 1]);
+        const cell = cells[cellIndex + 1];
+        if (cell) {
+          cell.innerText = value;
+          styleCell(cell);
         }
       });
     });
   }
+
+  table.addEventListener("input", (e) => {
+    styleCell(e.target);
+    saveData();
+  });
+
+  loadData();
 });
 </script>
 
