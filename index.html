@@ -154,27 +154,27 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("rosterData", JSON.stringify(data));
   }
 
-  function loadData() {
-    const saved = JSON.parse(localStorage.getItem("rosterData"));
-    if (!saved) return;
+ function loadData() {
+  const saved = JSON.parse(localStorage.getItem("rosterData"));
+  if (!saved) return;
 
-    const rows = table.querySelectorAll("tr");
+  const rows = table.querySelectorAll("tr");
 
-    saved.forEach((rowData, rowIndex) => {
-      const row = rows[rowIndex + 1];
-      if (!row) return;
+  saved.forEach((rowData, rowIndex) => {
+    const row = rows[rowIndex + 1];
+    if (!row) return;
 
-      const cells = row.querySelectorAll("td");
+    const cells = row.querySelectorAll("td");
 
-      rowData.forEach((value, cellIndex) => {
-        const cell = cells[cellIndex + 1];
-        if (cell) {
-          cell.innerText = value;
-          styleCell(cell);
-        }
-      });
+    rowData.forEach((value, cellIndex) => {
+      const cell = cells[cellIndex + 1];
+      if (cell) {
+        cell.innerText = value;
+        styleCell(cell); // ✅ THIS IS THE FIX
+      }
     });
-  }
+  });
+}
 
   table.addEventListener("input", (e) => {
     styleCell(e.target);
